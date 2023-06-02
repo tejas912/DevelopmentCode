@@ -11,5 +11,6 @@ public class DriverMode {
     }
     public void Loop() throws InterruptedException {
         motor.mapLimit(0.5);
+        motor.move(1);
     }
 }
