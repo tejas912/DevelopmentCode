@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class Chassis {
     Motor[] motors = new Motor[4];
     String[] motorPorts = new String[4];
-    int forward = 1;
+    int forward = -1;
     int motorCount;
     double limitSpeedX = 1;
     boolean limitSpeedEnableX = false;
@@ -29,6 +29,17 @@ public class Chassis {
         }
         motorCount = motors.length;
     }
+    public Chassis(HardwareMap hardwareMap){
+        motorPorts[0] = "frontRight";
+        motorPorts[1] = "backRight";
+        motorPorts[2] = "backLeft";
+        motorPorts[3] = "frontLeft";
+        for (int i = 0; i < motors.length; i++) {
+            motors[i] = new Motor(motorPorts[i], hardwareMap);
+        }
+        motorCount = motors.length;
+    }
+
     boolean isRunning(){
         boolean output = false;
         for (int i = 0; i < motorCount; i++) {
