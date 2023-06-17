@@ -15,6 +15,7 @@ public class TeleOpProgram extends OpMode{
 
     @Override
     public void loop(){
+        //change from tj
         chassis.move(gamepad1.right_stick_x, gamepad1.right_stick_y);
         chassis.rotate(gamepad1.left_stick_x);
         if(gamepad1.right_bumper){
