@@ -10,6 +10,7 @@ public class TeleOpProgram extends OpMode{
     int myVar;
     @Override
     public void init(){
+        //Init the chassis.
         chassis = new Chassis(hardwareMap);
     }
 
